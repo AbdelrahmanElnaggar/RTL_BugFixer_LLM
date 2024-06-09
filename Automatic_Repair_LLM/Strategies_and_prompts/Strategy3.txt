@@ -1,0 +1,136 @@
+  prompt1=f""" Provide the complete functioning code without adding extra words, comments, or explanations to your answer. Given the bug description: <<<{bug_description}>>>, fix the following buggy Verilog code:\n<<<{buggy_verilog_code}>>>\n 
+
+                Follow these repair guidelines based on the bug description: If the issue is with conditional statements, try flipping the condition. If it's about sensitivity, make sure to set triggers for when the signal goes up or down, when any variable changes, or when the signal's level changes. For assignment problems, switch between blocking and non-blocking assignments. And if there's a number problem, adjust the value by adding or subtracting 1 """
+
+    
+
+    prompt2=f"""
+
+            Your task is to correct the specified bug in the given Verilog code while maintaining its functionality. The description of the bug is <<< {bug_description}>>>. To accomplish this, deliver a complete, functional code without additional words, comments, or explanations. Focus on making one or more simple changes within the code, targeting the lines where the bug might originate. However, it's crucial not to change the overall logic and structure of the code. The provided buggy Verilog code is as follows: <<< \n{buggy_verilog_code}\n >>> Your goal is to identify and implement the necessary correction(s) to resolve the bug while adhering to the specified guidelines. 
+
+            Return the complete, corrected code between the following pattern: start_code and end_code. Follow these repair guidelines based on the bug description: 
+
+            If there's a defect in conditional statements, consider inverting the condition of the code block. 
+
+            If the issue lies in the sensitivity list, trigger an always block on the following: Signal's falling edge, signal's rising edge, any change to a variable within the block, or signal's level change. 
+
+            When dealing with assignment block defects, consider changing a blocking assignment to nonblocking or converting a non-blocking assignment to blocking. 
+
+            For numeric value discrepancies, adjust the value of an identifier by either incrementing or decrementing it by 1. 
+
+
+
+            """
+
+    
+
+    prompt3=f""" Your task as a hardware engineer assistant is to provide the complete functioning Verilog code, addressing a specific bug without adding extra words, comments, or explanations to your response. Your objective is to make one or more simple changes in the code, focusing on the lines where the bug might originate. However, you should refrain from altering the overall logic of the code. Ensure the corrected code is returned between the following pattern: start_code and end_code. 
+
+                Follow these repair guidelines based on the bug description: 
+
+                If there's a defect in conditional statements, consider inverting the condition of the code block. 
+
+                If the issue lies in the sensitivity list, verify that the always block triggers appropriately. This includes triggering the always block on the following conditions: when the signal falls or rises, when there is any change to a variable within the block, or when the signal's level changes. 
+
+                When dealing with assignment block defects, consider changing a blocking assignment to nonblocking or converting a non-blocking assignment to blocking. 
+
+                For numeric value discrepancies, adjust the value of an identifier by either incrementing or decrementing it by 1. 
+
+                The bug description is as follows: <<< {bug_description} >>>. Below is the provided buggy Verilog code:  <<< \n{buggy_verilog_code}\n >>> """
+				
+				
+				
+	prompt4= f""" 
+
+
+
+        Your Task: 
+
+        ----------------
+
+        Correct a buggy Verilog code provided below. You'll be given: 
+
+
+
+        1. The buggy Verilog code. 
+
+        2. A description of the bug. 
+
+
+
+        Instructions: 
+
+        ----------------
+
+        Deliver a complete, functional code without additional words, comments, or explanations. 
+
+        Focus on making one or more simple changes within the code, targeting the lines where the bug could originate. 
+
+        Do not change the overall logic and structure of the code.
+
+        Return the complete, corrected code between the following pattern: start_code and end_code.
+
+        Based on the bug description follow the following guidelines for repair: 
+
+        1. Conditional Statements:
+
+        If there's a defect in conditional statements, invert the condition of the code block.
+
+        2. Sensitivity List:
+
+        If the issue lies in the sensitivity list, verify that the always block triggers appropriately. This includes triggering the always block on the following conditions:
+
+        Signal's falling edge or Signal's rising edge or any change to a variable within the block or Signal's level change.
+
+        3. Assignment Block:
+
+        When dealing with assignment block defects:
+
+        Change a blocking assignment to nonblocking or Convert a non-blocking assignment to blocking.
+
+        4. Numeric Value:
+
+        For numeric value discrepancies:
+
+        Adjust the value of an identifier by either incrementing or decrementing it by 1
+
+
+
+        Bug Description: 
+
+        ----------------
+
+
+
+        '{bug_description}' 
+
+
+
+
+
+        Please find the provided buggy Verilog code below: 
+
+        ---------------- 
+
+
+
+        {buggy_verilog_code} 
+
+
+
+        """
+		
+	prompt5= f"""Think step by step. Focus on making one or more simple changes within the code, targeting the lines where the bug could originate. Provide reasoning for every code statement you generate. Ensure not to change the overall logic and structure of the code.
+
+                 Provide the complete functioning code without adding extra words, comments, or explanations to your answer. Given the bug description: <<<{bug_description}>>>, fix the following buggy Verilog code:
+
+
+
+                <<<{buggy_verilog_code}>>>
+
+
+
+                Follow these repair guidelines based on the bug description: If the issue is with conditional statements, try flipping the condition. If it's about sensitivity, make sure to set triggers for when the signal goes up or down, when any variable changes, or when the signal's level changes. For assignment problems, switch between blocking and non-blocking assignments. And if there's a number problem, adjust the value by adding or subtracting 1.
+
+                Lastly, ensure the corrected code is returned between the following pattern: start_code and end_code, ensuring there are no additional words, comments, or explanations.    """
+

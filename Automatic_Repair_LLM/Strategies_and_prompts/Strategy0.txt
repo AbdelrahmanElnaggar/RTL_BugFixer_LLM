@@ -1,0 +1,3 @@
+prompt= f" Give me the full working code only without generating any extra words or comments or explanation to your answer, Generate a fix for the following buggy verilog code : \n {buggy_verilog_code}\n"
+
+  

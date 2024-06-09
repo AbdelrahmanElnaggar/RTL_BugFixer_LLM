@@ -1,0 +1,247 @@
+ prompt1 = f"Provide the complete functioning code without adding extra words, comments, or explanations to your answer. Given the bug description: {bug_description}, the bug might be originating from one or more of the elements listed in this mismatch list:\n{tmp_mismatch_set}\n, fix the following buggy Verilog code:\n{buggy_verilog_code}\n"
+
+    prompt2=f"""
+
+        Your task is to correct the specified bug in the given Verilog code while maintaining its functionality. The description of the bug is <<< {bug_description}>>>. After comparing the output of the correct and buggy code, a list of signals or variables or registers causing the bug is obtained, which is <<<{tmp_mismatch_set}>>>. This list signifies the mismatch between the correct and buggy code, suggesting that the bug may be due to one or more elements in this list. 
+
+        It is important to provide the complete functioning code without adding extra words, comments, or explanations to your response. Your goal is to make one or more simple changes in the code, focusing on the lines where the bug might originate. However, you should not alter the overall logic of the code. The provided buggy Verilog code is as follows: <<< \n{buggy_verilog_code}\n >>> Your task is to identify and implement the necessary correction(s) to resolve the bug while adhering to the specified guidelines. 
+
+            """
+
+    prompt3=f""" Your task is to provide the complete functioning code as a hardware engineer without adding extra words, comments, or explanations to your response. Your goal is to make one or more simple changes in the code, focusing on the lines where the bug might originate. However, you should not alter the overall logic of the code. The description of the bug is <<< {bug_description}>>>. After comparing the output of the correct and buggy code, a list of signals or variables or registers causing the bug is obtained in the following list <<<{tmp_mismatch_set}>>>. This list signifies the mismatch between the correct and buggy code, suggesting that the bug may be due to one or more elements in this list.  
+
+        The provided buggy Verilog code is as follows: <<< \n{buggy_verilog_code}\n >>>  """
+
+    
+
+    prompt4= f""" 
+
+
+
+        Your Task: 
+
+        ----------------
+
+        Correct a buggy Verilog code provided below. You'll be given: 
+
+
+
+        1. The buggy Verilog code. 
+
+        2. A description of the bug. 
+
+        3. A list of potential elements where the bug might originate. 
+
+
+
+        Instructions: 
+
+        ----------------
+
+
+
+        Deliver a complete, functional code without additional words, comments, or explanations. 
+
+        Focus on making one or more simple changes within the code, targeting the lines where the bug could originate. 
+
+        Do not change the overall logic and structure of the code. 
+
+
+
+
+
+        Bug Description: 
+
+        ----------------
+
+
+
+        '{bug_description}' 
+
+
+
+        Identified Differences: 
+
+        ---------------- 
+
+
+
+        After comparing the output of the correct and buggy code, we have identified elements that may be contributing to the bug.
+
+        These elements, including Input Ports, Output Ports, Registers, Wires, or Data Types, will be listed below: 
+
+
+
+        {tmp_mismatch_set} 
+
+        
+
+
+
+        Please find the provided buggy Verilog code below: 
+
+        ---------------- 
+
+
+
+        {buggy_verilog_code} 
+
+
+
+        """ 
+
+
+
+
+
+
+
+
+
+prompt5= f""" 
+
+
+
+        Your Task: 
+
+        ----------------
+
+        Correct a buggy Verilog code provided below. You'll be given: 
+
+
+
+        1. The buggy Verilog code. 
+
+        2. A description of the bug. 
+
+        3. A list of potential elements where the bug might originate. 
+
+
+
+        Instructions: 
+
+        ----------------
+
+        Think step by step. Focus on making one or more simple changes within the code, targeting the lines where the bug could originate.
+
+        Provide reasoning for every code statement you generate. Ensure not to change the overall logic and structure of the code
+
+        Finally, return the complete, functional code between the following pattern: start_code and end_code, ensuring there are no additional words, comments, or explanations.
+
+
+
+        Bug Description: 
+
+        ----------------
+
+
+
+        '{bug_description}' 
+
+
+
+        Identified Differences: 
+
+        ---------------- 
+
+
+
+        After comparing the output of the correct and buggy code, we have identified elements that may be contributing to the bug. These elements, including Input Ports, Output Ports, Registers, Wires, or Data Types, will be listed below: 
+
+
+
+        {tmp_mismatch_set} 
+
+        
+
+
+
+        Please find the provided buggy Verilog code below: 
+
+        ---------------- 
+
+
+
+        {buggy_verilog_code} 
+
+
+
+        """ 
+
+
+
+
+
+prompt6= f""" 
+
+
+
+        Your Task: 
+
+        ----------------
+
+        Correct a buggy Verilog code provided below. You'll be given: 
+
+
+
+        1. The buggy Verilog code. 
+
+        2. A description of the bug. 
+
+        3. A list of potential elements where the bug might originate. 
+
+
+
+        Instructions: 
+
+        ----------------
+
+        
+
+        Start by listing the lines of code from the provided mismatch list that might be causing errors. Then, analyze which of these lines need to be corrected.
+
+        Focus on making one or more simple changes within the code, targeting the lines where the bug could originate. Ensure not to change the overall logic and structure of the code.
+
+        Deliver a complete, functional code without additional words, comments, or explanations. Return the complete, corrected code between the following pattern: start_code and end_code.
+
+
+
+       
+
+        Bug Description: 
+
+        ----------------
+
+
+
+        '{bug_description}' 
+
+
+
+        Identified Differences: 
+
+        ---------------- 
+
+
+
+        After comparing the output of the correct and buggy code, we have identified elements that may be contributing to the bug. These elements, including Input Ports, Output Ports, Registers, Wires, or Data Types, will be listed below: 
+
+
+
+        {tmp_mismatch_set} 
+
+        
+
+
+
+        Please find the provided buggy Verilog code below: 
+
+        ---------------- 
+
+
+
+        {buggy_verilog_code} 
+
+
+
+        """ 
